@@ -207,6 +207,9 @@
     <Reference Include="slf4net.NLog">
       <HintPath>..\packages\slf4net.NLog.0.1.32.1\lib\net35\slf4net.NLog.dll</HintPath>
     </Reference>
+    <Reference Include="slf4net.Simple">
+      <HintPath>..\packages\slf4net.Simple.0.1.32.1\lib\net35\slf4net.Simple.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Services" />
