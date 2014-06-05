@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using StackExchange.Profiling;
+using StackExchange.Profiling.EntityFramework6;
 
 namespace Nutrition
 {
@@ -10,6 +11,7 @@ namespace Nutrition
     {
         protected void Application_Start()
         {
+            MiniProfilerEF6.Initialize();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
