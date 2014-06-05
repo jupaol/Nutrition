@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using Microsoft.Practices.ServiceLocation;
 using Nutrition.UI.Services;
 
@@ -18,6 +19,11 @@ namespace Nutrition.Controllers
             ViewBag.Title = "Home Page";
 
             return View((object) _serviceLocator.GetInstance<ISimpleComponent>().Greeting());
+        }
+
+        public virtual ActionResult ThrowException()
+        {
+            throw new NotImplementedException("Wuupsy");
         }
     }
 }

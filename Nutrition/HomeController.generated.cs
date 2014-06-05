@@ -71,12 +71,14 @@ namespace Nutrition.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string ThrowException = "ThrowException";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string ThrowException = "ThrowException";
         }
 
 
@@ -91,8 +93,10 @@ namespace Nutrition.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Index = "Index";
+                public readonly string ThrowException = "ThrowException";
             }
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            public readonly string ThrowException = "~/Views/Home/ThrowException.cshtml";
         }
     }
 
@@ -109,6 +113,17 @@ namespace Nutrition.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ThrowExceptionOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult ThrowException()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ThrowException);
+            ThrowExceptionOverride(callInfo);
             return callInfo;
         }
 

@@ -24,6 +24,8 @@
                     <li>@Html.ActionLink("Home", MVC.Home.Index())</li>
                     <li>@Html.ActionLink("API", MVC.HelpPage.Help.Index())</li>
                     <li><a href="@Url.Content("~/Services/Service1.svc")">WCF Service</a></li>
+                    <li><a href="@Url.Content("~/elmah.axd")">ELMAH</a></li>
+                    <li>@Html.ActionLink("Exception", MVC.Home.ThrowException())</li>
                 </ul>
             </div>
         </div>
