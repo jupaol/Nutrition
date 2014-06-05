@@ -175,6 +175,10 @@
       <Project>{830e5b13-487a-48e3-8482-7421e418b2fa}</Project>
       <Name>Common.Testing</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{20a356fe-67e7-4f77-a140-e6875b93a226}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nutrition\Nutrition.csproj">
       <Project>{EAE0CCEA-A08E-40AB-BA40-114E4EAD9FF1}</Project>
       <Name>Nutrition</Name>

@@ -451,6 +451,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{20a356fe-67e7-4f77-a140-e6875b93a226}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UI.Services\UI.Services.csproj">
       <Project>{35648df7-049a-4aa2-aff6-bddccc371320}</Project>
       <Name>UI.Services</Name>

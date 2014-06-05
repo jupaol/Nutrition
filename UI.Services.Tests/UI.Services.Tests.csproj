@@ -56,9 +56,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NSubstitute.1.7.2.0\lib\NET45\NSubstitute.dll</HintPath>
     </Reference>
-    <Reference Include="Omu.ValueInjecter">
-      <HintPath>..\packages\valueinjecter.2.3.3\lib\net35\Omu.ValueInjecter.dll</HintPath>
-    </Reference>
     <Reference Include="Ploeh.Albedo">
       <HintPath>..\packages\Albedo.1.0.1\lib\net35\Ploeh.Albedo.dll</HintPath>
     </Reference>
@@ -103,6 +100,10 @@
     <ProjectReference Include="..\Common.Testing\Common.Testing.csproj">
       <Project>{830e5b13-487a-48e3-8482-7421e418b2fa}</Project>
       <Name>Common.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{20a356fe-67e7-4f77-a140-e6875b93a226}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\UI.Services\UI.Services.csproj">
       <Project>{35648df7-049a-4aa2-aff6-bddccc371320}</Project>
