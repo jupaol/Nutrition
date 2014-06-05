@@ -194,6 +194,10 @@
     <Reference Include="NinjectAdapter">
       <HintPath>..\packages\Web.ServiceLocator.Ninject.1.0.0.5\lib\net45-full\NinjectAdapter.dll</HintPath>
     </Reference>
+    <Reference Include="Omu.ValueInjecter">
+      <HintPath>..\packages\valueinjecter.2.3.3\lib\net35\Omu.ValueInjecter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Services" />
