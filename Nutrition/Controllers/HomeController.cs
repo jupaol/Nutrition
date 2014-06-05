@@ -4,7 +4,7 @@ using Nutrition.UI.Services;
 
 namespace Nutrition.Controllers
 {
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         private readonly IServiceLocator _serviceLocator;
 
@@ -13,7 +13,7 @@ namespace Nutrition.Controllers
             _serviceLocator = serviceLocator;
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             ViewBag.Title = "Home Page";
 
