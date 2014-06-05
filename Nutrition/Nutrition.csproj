@@ -85,6 +85,9 @@
     <Reference Include="Glimpse.Elmah">
       <HintPath>..\packages\Glimpse.Elmah.1.1.1\lib\net40\Glimpse.Elmah.dll</HintPath>
     </Reference>
+    <Reference Include="Glimpse.MiniProfiler">
+      <HintPath>..\packages\Glimpse.MiniProfiler.1.2.4\lib\net40\Glimpse.MiniProfiler.dll</HintPath>
+    </Reference>
     <Reference Include="Glimpse.Mvc5">
       <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
     </Reference>
