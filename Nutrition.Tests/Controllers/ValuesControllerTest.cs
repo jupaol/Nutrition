@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Web.Http;
+﻿using System.Linq;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nutrition;
+using NSubstitute;
+using Nutrition.Common.Testing;
 using Nutrition.Controllers;
+using Nutrition.UI.Services;
+using Ploeh.AutoFixture;
 
 namespace Nutrition.Tests.Controllers
 {
@@ -17,26 +16,33 @@ namespace Nutrition.Tests.Controllers
         public void Get()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var fixture = new Fixture().Customize(new ApiControllerConventions());
+            var simplecomponent = fixture.Freeze<ISimpleComponent>();
+
+            simplecomponent.Greeting().Returns("plop");
+
+            var controller = fixture.Create<ValuesController>();
 
             // Act
-            IEnumerable<string> result = controller.Get();
+            var result = controller.Get();
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count());
+            Assert.AreEqual(3, result.Count());
             Assert.AreEqual("value1", result.ElementAt(0));
             Assert.AreEqual("value2", result.ElementAt(1));
+            result.ElementAt(2).Should().Be("plop");
         }
 
         [TestMethod]
         public void GetById()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller =
+                new Fixture().Customize(new ApiControllerConventions()).Create<ValuesController>();
 
             // Act
-            string result = controller.Get(5);
+            var result = controller.Get(5);
 
             // Assert
             Assert.AreEqual("value", result);
@@ -46,7 +52,9 @@ namespace Nutrition.Tests.Controllers
         public void Post()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller =
+                new Fixture().Customize(new ApiControllerConventions()).Create<ValuesController>();
+
 
             // Act
             controller.Post("value");
@@ -58,7 +66,8 @@ namespace Nutrition.Tests.Controllers
         public void Put()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller =
+                new Fixture().Customize(new ApiControllerConventions()).Create<ValuesController>();
 
             // Act
             controller.Put(5, "value");
@@ -70,7 +79,8 @@ namespace Nutrition.Tests.Controllers
         public void Delete()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller =
+                new Fixture().Customize(new ApiControllerConventions()).Create<ValuesController>();
 
             // Act
             controller.Delete(5);

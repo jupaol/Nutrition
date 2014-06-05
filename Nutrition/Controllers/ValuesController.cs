@@ -1,19 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using Nutrition.UI.Services;
 
 namespace Nutrition.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ValuesController : ApiController
     {
+        private readonly ISimpleComponent _simpleComponent;
+
+        public ValuesController(ISimpleComponent simpleComponent)
+        {
+            _simpleComponent = simpleComponent;
+        }
+
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2", _simpleComponent.Greeting() };
         }
 
         // GET api/values/5
